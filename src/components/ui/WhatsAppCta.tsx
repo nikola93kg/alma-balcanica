@@ -17,13 +17,13 @@ type WhatsAppCtaProps = {
 
 const variants = {
   primary:
-    "border border-[#25d366]/45 bg-[#dff6e8] text-[#075e54] hover:border-[#25d366]/70 hover:bg-[#c8efd8] focus-visible:outline-[#25d366]",
+    "border border-accent bg-accent text-paper hover:border-green-dark hover:bg-green-dark focus-visible:outline-earth",
   secondary:
-    "border border-[#25d366]/30 bg-[#effbf4] text-[#075e54] hover:border-[#25d366]/55 hover:bg-[#dff6e8]",
+    "border border-border bg-transparent text-foreground hover:border-accent hover:bg-paper-muted hover:text-accent",
   light:
-    "border border-[#25d366]/55 bg-[#dff6e8] text-[#075e54] hover:border-white hover:bg-white",
+    "border border-paper/70 bg-paper text-accent hover:border-stone hover:bg-background hover:text-green-dark",
   ghost:
-    "border border-[#25d366]/40 bg-[#dff6e8]/12 text-white hover:border-[#25d366]/70 hover:bg-[#dff6e8] hover:text-[#075e54]",
+    "border border-paper/35 bg-paper/10 text-paper hover:border-paper hover:bg-paper hover:text-accent",
 };
 
 export function WhatsAppCta({
@@ -45,7 +45,7 @@ export function WhatsAppCta({
     </>
   );
   const classNames = cn(
-    "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors",
+    "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors duration-200",
     variants[variant],
     className,
   );
@@ -76,7 +76,7 @@ export function FloatingWhatsAppCta({ locale }: { locale: Locale }) {
       <WhatsAppCta
         locale={locale}
         label="WhatsApp"
-        className="w-full justify-center shadow-[0_18px_50px_rgba(7,94,84,0.18)]"
+        className="w-full justify-center shadow-[0_18px_50px_rgba(36,77,58,0.22)]"
       />
     </div>
   );

@@ -39,7 +39,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isSolid
-          ? "border-b border-border/70 bg-paper/95 text-foreground shadow-[0_10px_40px_rgba(22,19,15,0.08)] backdrop-blur-md"
+          ? "border-b border-border/70 bg-paper/95 text-foreground shadow-[0_10px_40px_rgba(36,39,34,0.08)] backdrop-blur-md"
           : "bg-transparent text-white",
       )}
     >
@@ -182,8 +182,8 @@ function LanguageSwitch({
       className={cn(
         "focus-ring inline-flex min-h-10 items-center gap-2 rounded-full border px-3 text-xs font-bold uppercase transition-colors",
         isSolid
-          ? "border-border bg-background text-foreground hover:border-accent hover:text-accent"
-          : "border-white/45 bg-charcoal/24 text-white shadow-[0_10px_30px_rgba(0,0,0,0.16)] hover:bg-white hover:text-foreground",
+          ? "border-border bg-background text-foreground hover:border-accent hover:bg-paper-muted hover:text-accent"
+          : "border-white/45 bg-charcoal/28 text-white shadow-[0_10px_30px_rgba(0,0,0,0.16)] hover:bg-paper hover:text-accent",
         className,
       )}
     >
@@ -211,10 +211,10 @@ function HeaderTourCta({
       href={href}
       onClick={onClick}
       className={cn(
-        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-bold text-white shadow-[0_14px_34px_rgba(33,27,24,0.18)] transition-colors",
+        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-bold text-paper shadow-[0_14px_34px_rgba(36,39,34,0.16)] transition-colors",
         isSolid
-          ? "border-accent bg-accent hover:border-charcoal hover:bg-charcoal"
-          : "border-white/30 bg-accent hover:border-white hover:bg-white hover:text-foreground",
+          ? "border-accent bg-accent hover:border-green-dark hover:bg-green-dark"
+          : "border-white/30 bg-accent hover:border-paper hover:bg-paper hover:text-accent",
         className,
       )}
     >

@@ -5,6 +5,7 @@ type SectionHeaderProps = {
   title: string;
   copy?: string;
   align?: "left" | "center";
+  tone?: "default" | "inverted";
   className?: string;
 };
 
@@ -13,6 +14,7 @@ export function SectionHeader({
   title,
   copy,
   align = "left",
+  tone = "default",
   className,
 }: SectionHeaderProps) {
   return (
@@ -24,15 +26,30 @@ export function SectionHeader({
       )}
     >
       {eyebrow ? (
-        <p className="mb-4 text-sm font-semibold uppercase text-accent">
+        <p
+          className={cn(
+            "mb-4 text-sm font-semibold uppercase",
+            tone === "inverted" ? "text-stone" : "text-accent",
+          )}
+        >
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-editorial text-4xl font-semibold leading-[1.02] text-foreground sm:text-5xl lg:text-6xl">
+      <h2
+        className={cn(
+          "font-editorial text-4xl font-semibold leading-[1.02] sm:text-5xl lg:text-6xl",
+          tone === "inverted" ? "text-paper" : "text-foreground",
+        )}
+      >
         {title}
       </h2>
       {copy ? (
-        <p className="mt-5 text-base leading-8 text-stone-dark sm:text-lg">
+        <p
+          className={cn(
+            "mt-5 text-base leading-8 sm:text-lg",
+            tone === "inverted" ? "text-paper/76" : "text-stone-dark",
+          )}
+        >
           {copy}
         </p>
       ) : null}

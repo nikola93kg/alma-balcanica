@@ -102,7 +102,7 @@ function BrandIntro({ locale }: HomePageProps) {
             copy={home.intro.copy}
           />
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="relative min-h-[360px] overflow-hidden rounded-md shadow-[var(--shadow-soft)] sm:min-h-[460px]">
+            <div className="relative min-h-[360px] overflow-hidden rounded-md border border-border bg-paper shadow-[var(--shadow-soft)] sm:min-h-[460px]">
               <LocalizedImage
                 image={media.table}
                 locale={locale}
@@ -110,7 +110,7 @@ function BrandIntro({ locale }: HomePageProps) {
                 sizes="(min-width: 1024px) 28vw, 100vw"
               />
             </div>
-            <div className="relative min-h-[300px] overflow-hidden rounded-md shadow-[var(--shadow-soft)] sm:mt-16 sm:min-h-[420px]">
+            <div className="relative min-h-[300px] overflow-hidden rounded-md border border-border bg-paper shadow-[var(--shadow-soft)] sm:mt-16 sm:min-h-[420px]">
               <LocalizedImage
                 image={media.skopjeMarket}
                 locale={locale}
@@ -158,7 +158,7 @@ function TravelWays({ locale }: HomePageProps) {
             <Link
               key={way.title}
               href={way.href}
-              className="group focus-ring relative min-h-[430px] overflow-hidden rounded-md bg-charcoal text-white shadow-[var(--shadow-soft)]"
+              className="group focus-ring relative min-h-[430px] overflow-hidden rounded-md border border-stone/40 bg-charcoal text-white shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-1"
             >
               <LocalizedImage
                 image={way.image}
@@ -167,7 +167,7 @@ function TravelWays({ locale }: HomePageProps) {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/88 via-charcoal/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/36 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                 <h3 className="font-editorial text-4xl font-semibold leading-tight sm:text-5xl">
                   {way.title}
@@ -224,13 +224,14 @@ function DestinationStorytelling({ locale }: HomePageProps) {
   const [primary, ...secondary] = featuredDestinations;
 
   return (
-    <section className="bg-charcoal py-20 text-paper sm:py-24 lg:py-28">
+    <section className="bg-accent py-20 text-paper sm:py-24 lg:py-28">
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeader
             eyebrow={home.destinations.eyebrow}
             title={home.destinations.heading}
             copy={home.destinations.copy}
+            tone="inverted"
           />
           <ButtonLink href={getRoute("destinations", locale)} variant="light">
             {home.destinations.eyebrow}
@@ -277,7 +278,7 @@ function DestinationPanel({
     <Link
       href={getDestinationRoute(destination, locale)}
       className={cn(
-        "group focus-ring relative overflow-hidden rounded-md bg-paper text-white",
+        "group focus-ring relative overflow-hidden rounded-md border border-stone/30 bg-paper text-white",
         className,
       )}
     >
@@ -288,7 +289,7 @@ function DestinationPanel({
         sizes={large ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 1024px) 38vw, 100vw"}
         className="transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/86 via-charcoal/24 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/88 via-charcoal/28 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
         <p className="flex items-center gap-2 text-sm font-semibold text-white/72">
           <MapPin aria-hidden="true" className="size-4" />
@@ -321,8 +322,11 @@ function WhyBalkans({ locale }: HomePageProps) {
           />
           <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2">
             {home.whyBalkans.themes.map((theme, index) => (
-              <article key={theme.title} className="border-t border-border pt-6">
-                <span className="text-sm font-semibold text-accent">
+              <article
+                key={theme.title}
+                className="rounded-md border border-border bg-background/70 p-6 transition-colors hover:border-olive/55 hover:bg-background"
+              >
+                <span className="text-sm font-semibold text-stone-dark">
                   0{index + 1}
                 </span>
                 <h3 className="font-editorial mt-4 text-3xl font-semibold text-foreground">
@@ -357,7 +361,7 @@ function HumanExperience({ locale }: HomePageProps) {
               {home.details.moments.map((moment) => (
                 <span
                   key={moment}
-                  className="rounded-md border border-border bg-paper px-3 py-2 text-sm text-stone-dark"
+                  className="rounded-md border border-border bg-paper px-3 py-2 text-sm text-stone-dark transition-colors hover:border-olive/55 hover:bg-paper-muted"
                 >
                   {moment}
                 </span>
@@ -366,7 +370,7 @@ function HumanExperience({ locale }: HomePageProps) {
           </div>
 
           <div className="grid min-h-[520px] grid-cols-5 grid-rows-6 gap-3">
-            <div className="relative col-span-3 row-span-6 overflow-hidden rounded-md">
+            <div className="relative col-span-3 row-span-6 overflow-hidden rounded-md border border-border bg-paper">
               <LocalizedImage
                 image={media.mostar}
                 locale={locale}
@@ -374,7 +378,7 @@ function HumanExperience({ locale }: HomePageProps) {
                 sizes="(min-width: 1024px) 35vw, 60vw"
               />
             </div>
-            <div className="relative col-span-2 row-span-3 overflow-hidden rounded-md">
+            <div className="relative col-span-2 row-span-3 overflow-hidden rounded-md border border-border bg-paper">
               <LocalizedImage
                 image={media.table}
                 locale={locale}
@@ -382,7 +386,7 @@ function HumanExperience({ locale }: HomePageProps) {
                 sizes="(min-width: 1024px) 22vw, 40vw"
               />
             </div>
-            <div className="relative col-span-2 row-span-3 overflow-hidden rounded-md">
+            <div className="relative col-span-2 row-span-3 overflow-hidden rounded-md border border-border bg-paper">
               <LocalizedImage
                 image={media.berat}
                 locale={locale}
@@ -409,7 +413,7 @@ function TrustSection({ locale }: HomePageProps) {
             title={home.trust.heading}
             copy={home.trust.copy}
           />
-          <div className="rounded-md border border-border bg-background p-6 sm:p-8">
+          <div className="rounded-md border border-border bg-paper/70 p-6 shadow-[var(--shadow-soft)] sm:p-8">
             <ul className="grid gap-4 sm:grid-cols-2">
               {home.trust.concepts.map((concept) => (
                 <li key={concept} className="flex gap-3">
@@ -450,7 +454,7 @@ function GuideSection({ locale }: HomePageProps) {
             <Link
               key={article.id}
               href={article.href[locale]}
-              className="group focus-ring flex min-h-64 flex-col justify-between rounded-md border border-border bg-paper p-5 transition-colors hover:border-accent"
+              className="group focus-ring flex min-h-64 flex-col justify-between rounded-md border border-border bg-paper p-5 transition-colors hover:border-olive/65 hover:bg-paper-muted"
             >
               <div>
                 <p className="text-xs font-semibold uppercase text-accent">
@@ -482,7 +486,7 @@ function AboutSection({ locale }: HomePageProps) {
     <section className="bg-paper py-20 sm:py-24 lg:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="relative min-h-[420px] overflow-hidden rounded-md">
+          <div className="relative min-h-[420px] overflow-hidden rounded-md border border-border bg-paper">
             <LocalizedImage
               image={media.noviSad}
               locale={locale}
@@ -515,17 +519,18 @@ function FinalCta({ locale }: HomePageProps) {
   const { home } = getDictionary(locale);
 
   return (
-    <section className="relative min-h-[72svh] overflow-hidden bg-charcoal text-white">
+    <section className="relative min-h-[72svh] overflow-hidden bg-charcoal text-paper">
       <LocalizedImage
         image={media.kotor}
         locale={locale}
         fill
         sizes="100vw"
+        className="opacity-55"
       />
-      <div className="image-overlay absolute inset-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/82 to-charcoal/48" />
       <Container className="relative flex min-h-[72svh] items-end pb-14 pt-28">
         <div className="max-w-3xl">
-          <h2 className="font-editorial text-5xl font-semibold leading-[1.02] text-white sm:text-7xl">
+          <h2 className="font-editorial text-5xl font-semibold leading-[1.02] text-paper sm:text-7xl">
             {home.finalCta.headline}
           </h2>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -535,7 +540,7 @@ function FinalCta({ locale }: HomePageProps) {
             <WhatsAppCta
               locale={locale}
               label={home.finalCta.secondary}
-              variant="light"
+              variant="ghost"
             />
           </div>
         </div>

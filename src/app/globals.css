@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7efe3;
-  --foreground: #181411;
-  --paper: #fffaf2;
-  --paper-muted: #eadfce;
-  --stone: #c7b9a6;
-  --stone-dark: #625b51;
-  --earth: #a35e45;
-  --olive: #69725a;
-  --accent: #7c2532;
-  --accent-soft: #d69a6c;
-  --charcoal: #211b18;
-  --border: #d8c9b8;
-  --shadow-soft: 0 24px 80px rgba(33, 27, 24, 0.12);
+  --background: #f4efe4;
+  --foreground: #242722;
+  --paper: #fffaf1;
+  --paper-muted: #ece4d6;
+  --stone: #d8cdba;
+  --stone-dark: #5a6b4c;
+  --earth: #c66a45;
+  --olive: #66785b;
+  --accent: #244d3a;
+  --accent-soft: #d8cdba;
+  --charcoal: #242722;
+  --border: #d8cdba;
+  --green-dark: #1a3a2b;
+  --green-light: #315d48;
+  --shadow-soft: 0 18px 54px rgba(36, 39, 34, 0.1);
 }
 
 @theme inline {
@@ -29,6 +31,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-charcoal: var(--charcoal);
   --color-border: var(--border);
+  --color-green-dark: var(--green-dark);
+  --color-green-light: var(--green-light);
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 }
@@ -63,7 +67,7 @@ a {
 }
 
 ::selection {
-  background: rgba(143, 51, 40, 0.18);
+  background: rgba(198, 106, 69, 0.2);
 }
 
 .font-editorial {
@@ -82,5 +86,16 @@ a {
 }
 
 .focus-ring:focus-visible {
-  outline-color: var(--accent);
+  outline-color: var(--earth);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

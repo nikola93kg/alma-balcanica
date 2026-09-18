@@ -12,11 +12,11 @@ type ButtonLinkProps = Omit<ComponentPropsWithoutRef<typeof Link>, "href"> & {
 
 const variants = {
   primary:
-    "bg-accent text-white hover:bg-charcoal focus-visible:outline-accent",
+    "border border-accent bg-accent text-paper hover:border-green-dark hover:bg-green-dark focus-visible:outline-earth",
   secondary:
-    "border border-border bg-paper text-foreground hover:border-accent hover:text-accent",
+    "border border-border bg-transparent text-foreground hover:border-accent hover:bg-paper-muted hover:text-accent",
   light:
-    "border border-white/55 bg-white/10 text-white hover:bg-white hover:text-foreground",
+    "border border-paper/70 bg-paper text-accent hover:border-stone hover:bg-background hover:text-green-dark",
   text: "text-foreground underline hover:text-accent",
 };
 
@@ -32,7 +32,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={cn(
-        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors",
+        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors duration-200",
         variants[variant],
         className,
       )}

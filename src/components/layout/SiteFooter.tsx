@@ -17,19 +17,19 @@ export function SiteFooter({ locale }: SiteFooterProps) {
   const dictionary = getDictionary(locale);
 
   return (
-    <footer className="border-t border-border bg-charcoal pb-20 text-paper lg:pb-0">
+    <footer className="border-t border-green-light bg-accent pb-20 text-paper lg:pb-0">
       <Container className="py-14 lg:py-18">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
           <div>
             <Link
               href={getRoute("home", locale)}
-              className="focus-ring inline-flex rounded-sm bg-paper/94 p-2 shadow-[0_16px_40px_rgba(0,0,0,0.18)]"
+              className="focus-ring inline-flex rounded-sm bg-paper p-2 shadow-[0_16px_40px_rgba(0,0,0,0.16)]"
               aria-label={dictionary.common.brandName}
             >
               <BrandLogo variant="footer" />
               <span className="sr-only">{dictionary.common.descriptor}</span>
             </Link>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-paper/70">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-paper/76">
               {dictionary.footer.intro}
             </p>
             <div className="mt-7">
@@ -85,13 +85,13 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 border-t border-white/10 pt-7 lg:grid-cols-[auto_1fr]">
-          <ShieldCheck aria-hidden="true" className="size-5 text-accent-soft" />
+        <div className="mt-12 grid gap-5 border-t border-stone/25 pt-7 lg:grid-cols-[auto_1fr]">
+          <ShieldCheck aria-hidden="true" className="size-5 text-stone" />
           <div>
-            <p className="max-w-4xl text-xs leading-6 text-paper/58">
+            <p className="max-w-4xl text-xs leading-6 text-paper/68">
               {dictionary.footer.operatorNotice}
             </p>
-            <p className="mt-4 text-xs text-paper/45">
+            <p className="mt-4 text-xs text-paper/65">
               © {new Date().getFullYear()} {dictionary.common.brandName}.{" "}
               {dictionary.footer.rights}
             </p>
@@ -117,7 +117,7 @@ function FooterColumn({
           <li key={`${link.href}-${link.label}`}>
             <Link
               href={link.href}
-              className="focus-ring rounded-sm text-sm text-paper/65 transition-colors hover:text-white"
+              className="focus-ring rounded-sm text-sm text-paper/72 transition-colors hover:text-white"
             >
               {link.label}
             </Link>

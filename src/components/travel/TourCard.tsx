@@ -39,7 +39,7 @@ export function TourCard({ tour, locale, featured, className }: TourCardProps) {
   return (
     <article
       className={cn(
-        "grid overflow-hidden rounded-md border border-border bg-paper shadow-[var(--shadow-soft)]",
+        "grid overflow-hidden rounded-md border border-border bg-paper shadow-[var(--shadow-soft)] transition-colors hover:border-olive/55",
         featured ? "lg:grid-cols-[0.95fr_1.05fr]" : "lg:grid-cols-[0.86fr_1.14fr]",
         className,
       )}
@@ -56,7 +56,7 @@ export function TourCard({ tour, locale, featured, className }: TourCardProps) {
           className="transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-transparent to-transparent" />
-        <span className="absolute left-5 top-5 rounded-md bg-paper px-3 py-2 text-xs font-bold uppercase text-foreground">
+        <span className="absolute left-5 top-5 rounded-md border border-stone/55 bg-paper px-3 py-2 text-xs font-bold uppercase text-foreground">
           {badge}
         </span>
       </Link>
@@ -80,7 +80,7 @@ export function TourCard({ tour, locale, featured, className }: TourCardProps) {
             <Fact icon={MessageCircle} label={tour.languageSupport[locale]} />
           </dl>
 
-          <dl className="mt-7 grid gap-3 rounded-md border border-border bg-background p-5 sm:grid-cols-2">
+          <dl className="mt-7 grid gap-3 rounded-md border border-border bg-background/80 p-5 sm:grid-cols-2">
             <div>
               <dt className="text-xs font-semibold uppercase text-stone-dark">
                 {dictionary.toursListing.nextDeparture}
@@ -128,7 +128,7 @@ function Fact({
   label: string;
 }) {
   return (
-    <div className="rounded-md border border-border bg-background p-4">
+    <div className="rounded-md border border-border bg-background/80 p-4">
       <Icon aria-hidden="true" className="size-5 text-accent" />
       <dd className="mt-3 text-sm font-semibold leading-6 text-foreground">
         {label}

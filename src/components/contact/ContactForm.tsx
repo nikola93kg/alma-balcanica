@@ -77,7 +77,7 @@ export function ContactForm({ locale }: ContactFormProps) {
 
       <button
         type="submit"
-        className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-charcoal sm:w-fit"
+        className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-accent bg-accent px-5 py-3 text-sm font-semibold text-paper transition-colors hover:border-green-dark hover:bg-green-dark sm:w-fit"
       >
         <Send aria-hidden="true" className="size-4" />
         {dictionary.contact.submit}
